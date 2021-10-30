@@ -1,0 +1,19 @@
+CareerStatsWrapper [class]
+public:
+    CareerStatsWrapper::StatValue [struct]
+    public:
+        CareerStatsWrapper::StatValue::stat_name [variable]
+        CareerStatsWrapper::StatValue::private_ [variable]
+        CareerStatsWrapper::StatValue::unranked [variable]
+        CareerStatsWrapper::StatValue::ranked [variable]
+        CareerStatsWrapper::StatValue::StatValue(CareerStatsWrapper::StatValue const & arg0) [constructor]
+        CareerStatsWrapper::StatValue::~StatValue() [destructor]
+        CareerStatsWrapper::StatValue::StatValue() [constructor]
+        CareerStatsWrapper::StatValue & CareerStatsWrapper::StatValue::operator=(CareerStatsWrapper::StatValue const & arg0) [member operator]
+
+    static std::vector<CareerStatsWrapper::StatValue, std::allocator<CareerStatsWrapper::StatValue> > CareerStatsWrapper::GetStatValues() [member function]
+    CareerStatsWrapper::CareerStatsWrapper() [constructor]
+    CareerStatsWrapper::CareerStatsWrapper(CareerStatsWrapper const & arg0) [constructor]
+    CareerStatsWrapper & CareerStatsWrapper::operator=(CareerStatsWrapper const & arg0) [member operator]
+    CareerStatsWrapper::~CareerStatsWrapper() [destructor]
+

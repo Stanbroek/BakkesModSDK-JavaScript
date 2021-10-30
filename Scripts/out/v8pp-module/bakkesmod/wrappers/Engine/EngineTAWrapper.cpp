@@ -1,0 +1,60 @@
+void bind_EngineTAWrapper([[maybe_unused]] v8::Isolate* isolate, v8pp::module& module)
+{
+
+	v8pp::class_<EngineTAWrapper> cl_EngineTAWrapper(isolate);
+	cl_EngineTAWrapper.inherit<ObjectWrapper>();
+	cl_EngineTAWrapper.ctor<uintptr_t>();
+	cl_EngineTAWrapper.set<bool(EngineTAWrapper::*)() const>("IsNull", &EngineTAWrapper::IsNull);
+	cl_EngineTAWrapper.set<long unsigned int(EngineTAWrapper::*)()>("GetbEnableClientPrediction", &EngineTAWrapper::GetbEnableClientPrediction);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(long unsigned int)>("SetbEnableClientPrediction", &EngineTAWrapper::SetbEnableClientPrediction);
+	cl_EngineTAWrapper.set<long unsigned int(EngineTAWrapper::*)()>("GetbClientPhysicsUpdate", &EngineTAWrapper::GetbClientPhysicsUpdate);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(long unsigned int)>("SetbClientPhysicsUpdate", &EngineTAWrapper::SetbClientPhysicsUpdate);
+	cl_EngineTAWrapper.set<long unsigned int(EngineTAWrapper::*)()>("GetbDisableClientCorrections", &EngineTAWrapper::GetbDisableClientCorrections);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(long unsigned int)>("SetbDisableClientCorrections", &EngineTAWrapper::SetbDisableClientCorrections);
+	cl_EngineTAWrapper.set<long unsigned int(EngineTAWrapper::*)()>("GetbDebugClientCorrections", &EngineTAWrapper::GetbDebugClientCorrections);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(long unsigned int)>("SetbDebugClientCorrections", &EngineTAWrapper::SetbDebugClientCorrections);
+	cl_EngineTAWrapper.set<long unsigned int(EngineTAWrapper::*)()>("GetbForceClientCorrection", &EngineTAWrapper::GetbForceClientCorrection);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(long unsigned int)>("SetbForceClientCorrection", &EngineTAWrapper::SetbForceClientCorrection);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetPhysicsFramerate", &EngineTAWrapper::GetPhysicsFramerate);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("SetPhysicsFramerate", &EngineTAWrapper::SetPhysicsFramerate);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetMaxPhysicsSubsteps", &EngineTAWrapper::GetMaxPhysicsSubsteps);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetMaxPhysicsSubsteps", &EngineTAWrapper::SetMaxPhysicsSubsteps);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetMaxUploadedClientFrames", &EngineTAWrapper::GetMaxUploadedClientFrames);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetMaxUploadedClientFrames", &EngineTAWrapper::SetMaxUploadedClientFrames);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetMaxClientReplayFrames", &EngineTAWrapper::GetMaxClientReplayFrames);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetMaxClientReplayFrames", &EngineTAWrapper::SetMaxClientReplayFrames);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetPhysicsFrame", &EngineTAWrapper::GetPhysicsFrame);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetPhysicsFrame", &EngineTAWrapper::SetPhysicsFrame);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetRenderAlpha", &EngineTAWrapper::GetRenderAlpha);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("SetRenderAlpha", &EngineTAWrapper::SetRenderAlpha);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetReplicatedPhysicsFrame", &EngineTAWrapper::GetReplicatedPhysicsFrame);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetReplicatedPhysicsFrame", &EngineTAWrapper::SetReplicatedPhysicsFrame);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetDirtyPhysicsFrame", &EngineTAWrapper::GetDirtyPhysicsFrame);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetDirtyPhysicsFrame", &EngineTAWrapper::SetDirtyPhysicsFrame);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetForceCorrectionFrames", &EngineTAWrapper::GetForceCorrectionFrames);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetForceCorrectionFrames", &EngineTAWrapper::SetForceCorrectionFrames);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetTickNotifyIndex", &EngineTAWrapper::GetTickNotifyIndex);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetTickNotifyIndex", &EngineTAWrapper::SetTickNotifyIndex);
+	cl_EngineTAWrapper.set<UnrealStringWrapper(EngineTAWrapper::*)()>("GetShellArchetypePath", &EngineTAWrapper::GetShellArchetypePath);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetLastBugReportTime", &EngineTAWrapper::GetLastBugReportTime);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("SetLastBugReportTime", &EngineTAWrapper::SetLastBugReportTime);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetDebugClientCorrectionStartTime", &EngineTAWrapper::GetDebugClientCorrectionStartTime);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("SetDebugClientCorrectionStartTime", &EngineTAWrapper::SetDebugClientCorrectionStartTime);
+	cl_EngineTAWrapper.set<int(EngineTAWrapper::*)()>("GetDebugClientCorrectionCount", &EngineTAWrapper::GetDebugClientCorrectionCount);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("SetDebugClientCorrectionCount", &EngineTAWrapper::SetDebugClientCorrectionCount);
+	cl_EngineTAWrapper.set<StatGraphSystemWrapper(EngineTAWrapper::*)()>("GetStatGraphs", &EngineTAWrapper::GetStatGraphs);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(StatGraphSystemWrapper)>("SetStatGraphs", &EngineTAWrapper::SetStatGraphs);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetLastPhysicsDeltaTimeScale", &EngineTAWrapper::GetLastPhysicsDeltaTimeScale);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("SetLastPhysicsDeltaTimeScale", &EngineTAWrapper::SetLastPhysicsDeltaTimeScale);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)()>("DebugClientCorrections2", &EngineTAWrapper::DebugClientCorrections2);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetBulletFixedDeltaTime", &EngineTAWrapper::GetBulletFixedDeltaTime);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int, float)>("RunPhysicsStep", &EngineTAWrapper::RunPhysicsStep);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(int)>("UpdateReplicatedPhysicsFrame", &EngineTAWrapper::UpdateReplicatedPhysicsFrame);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("DebugDedicatedServer", &EngineTAWrapper::DebugDedicatedServer);
+	cl_EngineTAWrapper.set<float(EngineTAWrapper::*)()>("GetPhysicsTime", &EngineTAWrapper::GetPhysicsTime);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)()>("eventRecordAppStart", &EngineTAWrapper::eventRecordAppStart);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)()>("eventInit", &EngineTAWrapper::eventInit);
+	cl_EngineTAWrapper.set<void(EngineTAWrapper::*)(float)>("EventPreAsyncTick", &EngineTAWrapper::EventPreAsyncTick);
+
+	module.set("EngineTAWrapper", cl_EngineTAWrapper);
+}

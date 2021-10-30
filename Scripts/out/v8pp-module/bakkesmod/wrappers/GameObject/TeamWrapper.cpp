@@ -1,0 +1,62 @@
+void bind_TeamWrapper([[maybe_unused]] v8::Isolate* isolate, v8pp::module& module)
+{
+
+	v8pp::class_<TeamWrapper> cl_TeamWrapper(isolate);
+	cl_TeamWrapper.inherit<TeamInfoWrapper>();
+	cl_TeamWrapper.ctor<uintptr_t>();
+	cl_TeamWrapper.set<LinearColor(TeamWrapper::*)()>("GetPrimaryColor", &TeamWrapper::GetPrimaryColor);
+	cl_TeamWrapper.set<LinearColor(TeamWrapper::*)()>("GetSecondaryColor", &TeamWrapper::GetSecondaryColor);
+	cl_TeamWrapper.set<LinearColor(TeamWrapper::*)()>("GetFontColor", &TeamWrapper::GetFontColor);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(LinearColor)>("SetFontColor", &TeamWrapper::SetFontColor);
+	cl_TeamWrapper.set<LinearColor(TeamWrapper::*)()>("GetColorBlindFontColor", &TeamWrapper::GetColorBlindFontColor);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(LinearColor)>("SetColorBlindFontColor", &TeamWrapper::SetColorBlindFontColor);
+	cl_TeamWrapper.set<UnrealColor(TeamWrapper::*)()>("GetTeamControllerColor", &TeamWrapper::GetTeamControllerColor);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(UnrealColor)>("SetTeamControllerColor", &TeamWrapper::SetTeamControllerColor);
+	cl_TeamWrapper.set<UnrealColor(TeamWrapper::*)()>("GetTeamScoreStrobeColor", &TeamWrapper::GetTeamScoreStrobeColor);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(UnrealColor)>("SetTeamScoreStrobeColor", &TeamWrapper::SetTeamScoreStrobeColor);
+	cl_TeamWrapper.set<StructArrayWrapper<LinearColor>(TeamWrapper::*)()>("GetDefaultColorList", &TeamWrapper::GetDefaultColorList);
+	cl_TeamWrapper.set<StructArrayWrapper<LinearColor>(TeamWrapper::*)()>("GetColorBlindColorList", &TeamWrapper::GetColorBlindColorList);
+	cl_TeamWrapper.set<StructArrayWrapper<LinearColor>(TeamWrapper::*)()>("GetCurrentColorList", &TeamWrapper::GetCurrentColorList);
+	cl_TeamWrapper.set<TeamGameEventWrapper(TeamWrapper::*)()>("GetGameEvent", &TeamWrapper::GetGameEvent);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(TeamGameEventWrapper)>("SetGameEvent", &TeamWrapper::SetGameEvent);
+	cl_TeamWrapper.set<ArrayWrapper<PriWrapper>(TeamWrapper::*)()>("GetMembers", &TeamWrapper::GetMembers);
+	cl_TeamWrapper.set<UnrealStringWrapper(TeamWrapper::*)()>("GetCustomTeamName", &TeamWrapper::GetCustomTeamName);
+	cl_TeamWrapper.set<UnrealStringWrapper(TeamWrapper::*)()>("GetSanitizedTeamName", &TeamWrapper::GetSanitizedTeamName);
+	cl_TeamWrapper.set<long long unsigned int(TeamWrapper::*)()>("GetClubID", &TeamWrapper::GetClubID);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(long long unsigned int)>("SetClubID", &TeamWrapper::SetClubID);
+	cl_TeamWrapper.set<long unsigned int(TeamWrapper::*)()>("GetbForfeit", &TeamWrapper::GetbForfeit);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(long unsigned int)>("SetbForfeit", &TeamWrapper::SetbForfeit);
+	cl_TeamWrapper.set<bool(TeamWrapper::*)(PriWrapper)>("__Team_TA__GetHumanPlayers", &TeamWrapper::__Team_TA__GetHumanPlayers);
+	cl_TeamWrapper.set<bool(TeamWrapper::*)(PriWrapper)>("__Team_TA__GetHumanPrimaryPlayers", &TeamWrapper::__Team_TA__GetHumanPrimaryPlayers);
+	cl_TeamWrapper.set<bool(TeamWrapper::*)(PriWrapper)>("__Team_TA__GetNumOfMembersThatCanStartForfeit", &TeamWrapper::__Team_TA__GetNumOfMembersThatCanStartForfeit);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(PriWrapper)>("__Team_TA__EnableAllMembersStartVoteToForfeit", &TeamWrapper::__Team_TA__EnableAllMembersStartVoteToForfeit);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("OnClubColorsChanged", &TeamWrapper::OnClubColorsChanged);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("Forfeit2", &TeamWrapper::Forfeit2);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("EnableAllMembersStartVoteToForfeit2", &TeamWrapper::EnableAllMembersStartVoteToForfeit2);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("EnableAllMembersStartVoteToForfeitIfNecessary", &TeamWrapper::EnableAllMembersStartVoteToForfeitIfNecessary);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(PriWrapper)>("VoteToForfeit22", &TeamWrapper::VoteToForfeit22);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("NotifyKismetTeamColorChanged", &TeamWrapper::NotifyKismetTeamColorChanged);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("UpdateColors", &TeamWrapper::UpdateColors);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(int, long unsigned int)>("SetLogo", &TeamWrapper::SetLogo);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(std::string, std::string)>("HandleTeamNameSanitized", &TeamWrapper::HandleTeamNameSanitized);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(long long unsigned int)>("SetClubID2", &TeamWrapper::SetClubID2);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(std::string)>("SetCustomTeamName", &TeamWrapper::SetCustomTeamName);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("SetDefaultColors", &TeamWrapper::SetDefaultColors);
+	cl_TeamWrapper.set<bool(TeamWrapper::*)()>("IsSingleParty", &TeamWrapper::IsSingleParty);
+	cl_TeamWrapper.set<PriWrapper(TeamWrapper::*)(std::string)>("GetTeamMemberNamed", &TeamWrapper::GetTeamMemberNamed);
+	cl_TeamWrapper.set<int(TeamWrapper::*)()>("GetNumBots", &TeamWrapper::GetNumBots);
+	cl_TeamWrapper.set<int(TeamWrapper::*)()>("GetNumHumans", &TeamWrapper::GetNumHumans);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("OnScoreUpdated", &TeamWrapper::OnScoreUpdated);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("ResetScore", &TeamWrapper::ResetScore);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(int)>("RemovePoints", &TeamWrapper::RemovePoints);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(int)>("SetScore", &TeamWrapper::SetScore);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(int)>("ScorePoint", &TeamWrapper::ScorePoint);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(TeamWrapper, long unsigned int)>("MuteOtherTeam", &TeamWrapper::MuteOtherTeam);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("ClearTemporarySpawnSpots", &TeamWrapper::ClearTemporarySpawnSpots);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("ExpireTemporarySpawnSpots", &TeamWrapper::ExpireTemporarySpawnSpots);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(ActorWrapper)>("AddTemporarySpawnSpot", &TeamWrapper::AddTemporarySpawnSpot);
+	cl_TeamWrapper.set<void(TeamWrapper::*)()>("OnGameEventSet", &TeamWrapper::OnGameEventSet);
+	cl_TeamWrapper.set<void(TeamWrapper::*)(TeamGameEventWrapper)>("SetGameEvent2", &TeamWrapper::SetGameEvent2);
+
+	module.set("TeamWrapper", cl_TeamWrapper);
+}

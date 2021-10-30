@@ -1,0 +1,9 @@
+[submodule "External/v8pp"]
+	path = External/v8pp
+	url = https://github.com/pmed/v8pp.git
+[submodule "External/node"]
+	path = External/node
+	url = https://github.com/nodejs/node.git
+[submodule "External/BakkesModSDK"]
+	path = External/BakkesModSDK
+	url = https://github.com/bakkesmodorg/BakkesModSDK.git

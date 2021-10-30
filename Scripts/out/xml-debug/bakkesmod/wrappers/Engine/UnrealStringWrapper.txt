@@ -1,0 +1,27 @@
+ArrayWrapper<wchar_t> [class]
+public:
+    ArrayWrapper<wchar_t>::ArrayWrapper(uintptr_t mem) [constructor]
+    ArrayWrapper<wchar_t>::ArrayWrapper(ArrayWrapper<wchar_t> const & other) [constructor]
+    ArrayWrapper<wchar_t> & ArrayWrapper<wchar_t>::operator=(ArrayWrapper<wchar_t> rhs) [member operator]
+    ArrayWrapper<wchar_t>::~ArrayWrapper() [destructor]
+    int ArrayWrapper<wchar_t>::Count() [member function]
+    wchar_t ArrayWrapper<wchar_t>::Get(int index) [member function]
+    bool ArrayWrapper<wchar_t>::IsNull() [member function]
+protected:
+    ArrayWrapper<wchar_t>::Impl [class declaration]
+    ArrayWrapper<wchar_t>::pimpl [variable]
+
+UnrealStringWrapper [class]
+public:
+    UnrealStringWrapper::UnrealStringWrapper(uintptr_t mem) [constructor]
+    UnrealStringWrapper::UnrealStringWrapper(UnrealStringWrapper const & other) [constructor]
+    UnrealStringWrapper & UnrealStringWrapper::operator=(UnrealStringWrapper rhs) [member operator]
+    UnrealStringWrapper::~UnrealStringWrapper() [destructor]
+    std::string UnrealStringWrapper::ToString() [member function]
+    std::wstring UnrealStringWrapper::ToWideString() [member function]
+    bool UnrealStringWrapper::IsNull() [member function]
+    bool UnrealStringWrapper::operator bool() [casting operator]
+private:
+    UnrealStringWrapper::Impl [class declaration]
+    UnrealStringWrapper::pimpl [variable]
+
